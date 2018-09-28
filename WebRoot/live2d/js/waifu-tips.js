@@ -43,7 +43,11 @@ $('.waifu-tool .fui-user').click(function (){
     loadRandModel();//加载随机一个模型
     //loadOtherModel();加载一个模型
 });
-
+$('.waifu-tool .fui-photo').click(function (){//拍照
+    window.Live2D.captureName = 'Pic.png';
+    window.Live2D.captureFrame = true;
+    showMessage('照好了嘛，是不是很可爱呢？', 5000, true);
+});
 
 $('.waifu-tool .fui-cross').click(function (){//关闭
     sessionStorage.setItem('waifu-dsiplay', 'none');
@@ -241,8 +245,3 @@ function loadOtherModel(){
     });
 }
 
-function takePhotos(){//拍照
-    window.Live2D.captureName = 'Pic.png';
-    window.Live2D.captureFrame = true;
-    showMessage('照好了嘛，是不是很可爱呢？', 5000, true);
-}

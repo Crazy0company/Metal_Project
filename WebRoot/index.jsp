@@ -33,16 +33,31 @@
     <script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
     <link rel="stylesheet" type="text/css"
           href="<%=basePath%>game/bootstrap/css/bootstrap.min.css">
+
+    <script type="text/javascript">
+        $(function () {
+        $('#myFrame').css(<!--初始高度-->
+            "height",$(window).height());
+        <!--当调整窗口大小时-->
+        $(window).resize(function() {
+            $('#myFrame').css(
+                "height",$(window).height());
+        });
+    })
+    </script>
 </head>
 <style>
     body {
         background: url("<%=basePath%>game/images/bg_0406.jpg") no-repeat;
         background-size: cover;
     }
+
 </style>
 <body>
-<center><iframe style="border:0;" name="myFrame" scrolling="no" width="800" height="100%" src="<%=basePath%>game/index.jsp"  noresize="noresize">
+<center><iframe style="border:0;" name="myFrame" scrolling="no" id="myFrame"  width="800"  src="<%=basePath%>game/index.jsp"  noresize="noresize">
 </iframe></center>
+
+
 
 <footer> <!-- 加载样式 -->
     <link rel="stylesheet" type="text/css"
@@ -55,7 +70,7 @@
         <!-- 工具栏 -->
         <div class="waifu-tool">
             <span class="fui-chat">一言</span> <span class="fui-eye">换人</span> <span
-                class="fui-user">换装</span> <span class="fui-photo" onclick="takePhotos()">拍照</span> <span
+                class="fui-user">换装</span> <span class="fui-photo">拍照</span> <span
                 class="fui-cross">隐藏</span>
         </div>
 
@@ -64,8 +79,6 @@
     <script type="text/javascript">
         var message_Path = 'live2d/';
     </script> <script type="text/javascript" src="<%=basePath%>live2d/js/live2d.js"></script>
-
-
     <script src="<%=basePath%>live2d/js/waifu-tips.js"></script> <!-- 初始化看板娘，会自动加载指定目录下的 waifu-tips.json -->
     <script type="text/javascript">initModel('<%=basePath%>live2d/');
     </script> </footer>
