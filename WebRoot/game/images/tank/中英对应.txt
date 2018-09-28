@@ -1,0 +1,21 @@
+蓝色吉普 Bule jeep
+蓝色风暴 Blue Storm
+大巴士 Bus
+碾压者 Roller Compactor
+血红猎手 Blood hunters
+R狼 R_wolf
+吉普 jeep
+"猛犸"战车 Mammoth
+"MBT"步兵战车 MBT
+PL-01 PL-01
+T-30“蜘蛛” T-30 Spider
+猎豹 Gepard
+歼灭者 Annihilator
+
+
+蛋蛋战车 egg
+突击炮 Assault gun
+"战神" God of War
+"帝皇" Emperor
+"斗士" Combatant
+虎式 Tiger

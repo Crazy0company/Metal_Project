@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+     <!-- 设置别名 -->
+   <typeAliases>
+      <!-- 将com.lcvc.ebuytest3.model.Admin类重新起一个名字Admin，供mybatis的映射文件使用 -->
+      <typeAlias alias="play" type="com.game.metal_project.model.PlayModel"/>
+      <!-- data数据 -->
+      <typeAlias alias="tank_data" type="com.game.metal_project.model.data.Tank_DataModel"/>
+      <typeAlias alias="chassis_skill_data" type="com.game.metal_project.model.data.Chassis_Skill_DataModel"/>
+      <typeAlias alias="armor_data" type="com.game.metal_project.model.data.Armor_DataModel"/>
+      <typeAlias alias="core_data" type="com.game.metal_project.model.data.Core_DataModel"/>
+      <typeAlias alias="engine_data" type="com.game.metal_project.model.data.Engine_DataModel"/>
+      <typeAlias alias="weapon_data" type="com.game.metal_project.model.data.Weapon_DataModel"/>
+      <typeAlias alias="rarity" type="com.game.metal_project.model.data.RarityModel"/>
+      <typeAlias alias="shell_data" type="com.game.metal_project.model.data.Shell_DataModel"/>
+      <typeAlias alias="material_data" type="com.game.metal_project.model.data.Material_DataModel"/>
+      <!-- pack数据 -->
+      <typeAlias alias="armor_pack" type="com.game.metal_project.model.pack.Armor_PackModel"/>
+      <typeAlias alias="core_pack" type="com.game.metal_project.model.pack.Core_PackModel"/>
+      <typeAlias alias="engine_pack" type="com.game.metal_project.model.pack.Engine_PackModel"/>
+      <typeAlias alias="material_pack" type="com.game.metal_project.model.pack.Material_PackModel"/>
+      <typeAlias alias="shell_pack" type="com.game.metal_project.model.pack.Shell_PackModel"/>
+      <typeAlias alias="tank_pack" type="com.game.metal_project.model.pack.Tank_PackModel"/>
+      <typeAlias alias="weapon_pack" type="com.game.metal_project.model.pack.Weapon_PackModel"/>
+   </typeAliases>  
+    
+     <mappers>
+     </mappers>
+    
+</configuration>

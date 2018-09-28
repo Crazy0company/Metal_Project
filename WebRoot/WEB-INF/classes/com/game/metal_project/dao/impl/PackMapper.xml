@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.game.metal_project.dao.PackDao">
+   <!-- 获取装甲 -->
+    <resultMap type="armor_pack" id="armorpack">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="armor_name" javaType="armor_data" column="armor_name" select="com.game.metal_project.dao.DataDao.getArmorDataFromCH">
+   	</association>
+   	</resultMap>
+
+   <!-- 获取c核心 -->
+   	<resultMap type="core_pack" id="corepack">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="core_name" javaType="core_data" column="core_name" select="com.game.metal_project.dao.DataDao.getCoreDataFromCH">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 获取引擎 -->
+    <resultMap type="engine_pack" id="enginepack">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="engine_name" javaType="engine_data" column="engine_name" select="com.game.metal_project.dao.DataDao.getEngineDataFromCH">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 获取材料 -->
+    <resultMap type="material_pack" id="materialpack">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="material_name" javaType="material_data" column="material_name" select="com.game.metal_project.dao.DataDao.getMaterialDataFromCH">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 获取炮弹 -->
+    <resultMap type="shell_pack" id="shellpack">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="shell_name" javaType="shell_data" column="shell_name" select="com.game.metal_project.dao.DataDao.getShellDataFromCH">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 获取武器 -->
+    <resultMap type="weapon_pack" id="weaponpack">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="weapon_name" javaType="weapon_data" column="weapon_name" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	<association property="shell_name" javaType="shell_data" column="shell_name" select="com.game.metal_project.dao.DataDao.getShellDataFromCH">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 获取战车 -->
+    <resultMap type="tank_pack" id="tankpack">
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="tank_rarity" javaType="rarity" column="tank_rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	<association property="chassis_skill" javaType="chassis_skill_data" column="chassis_skill" select="com.game.metal_project.dao.DataDao.getChassisSkill">
+   	</association>
+   	<association property="armor" javaType="armor_pack" column="armor" select="com.game.metal_project.dao.PackDao.getArmorPackFromID">
+   	</association>
+   	<association property="core_1" javaType="core_pack" column="core_1" select="com.game.metal_project.dao.PackDao.getCorePackFromID">
+   	</association>
+   	<association property="core_2" javaType="core_pack" column="core_2" select="com.game.metal_project.dao.PackDao.getCorePackFromID">
+   	</association>
+   	<association property="engine_1" javaType="engine_pack" column="engine_1" select="com.game.metal_project.dao.PackDao.getEnginePackFromID">
+   	</association>
+   	<association property="engine_2" javaType="engine_pack" column="engine_2" select="com.game.metal_project.dao.PackDao.getEnginePackFromID">
+   	</association>
+   	<association property="hole_1" javaType="engine_pack" column="hole_1" select="com.game.metal_project.dao.PackDao.getWeaponPackFromID">
+   	</association>
+   	<association property="hole_2" javaType="engine_pack" column="hole_2" select="com.game.metal_project.dao.PackDao.getWeaponPackFromID">
+   	</association>
+   	<association property="hole_3" javaType="engine_pack" column="hole_3" select="com.game.metal_project.dao.PackDao.getWeaponPackFromID">
+   	</association>
+   	<association property="hole_4" javaType="engine_pack" column="hole_4" select="com.game.metal_project.dao.PackDao.getWeaponPackFromID">
+   	</association>
+   	<association property="hole_5" javaType="engine_pack" column="hole_5" select="com.game.metal_project.dao.PackDao.getWeaponPackFromID">
+   	</association>
+   	<association property="hole_6" javaType="engine_pack" column="hole_6" select="com.game.metal_project.dao.PackDao.getWeaponPackFromID">
+   	</association>
+   	</resultMap>
+   	
+   <!-- SQL语句:查询 -->
+   <!-- 根据战车id查询战车 -->
+   <select id="tankMessage" resultMap="tankpack">
+   		select * from tank_pack where id=#{id}
+   </select>
+   <!-- 根据装备库内的装甲id查询对应的装甲 -->
+   <select id="getArmorPackFromID" resultMap="armorpack">
+   		select * from armor_pack where id=#{id}
+   </select>
+   
+   <!-- 根据装备库内的C核心id查询对应的C核心 -->
+   <select id="getCorePackFromID" resultMap="corepack">
+   		select * from core_pack where id=#{id}
+   </select>
+   
+   <!-- 根据装备库内的引擎id查询对应的引擎 -->
+   <select id="getEnginePackFromID" resultMap="enginepack">
+   		select * from engine_pack where id=#{id}
+   </select>
+   
+   <!-- 根据材料名称和玩家id查询该玩家材料库内的材料 -->
+   <select id="getMaterialPackFromCH" resultMap="materialpack">
+   		select * from material_pack where material_name=#{material_name.name} and p_id=#{p_id}
+   </select>
+   
+   <!-- 根据炮弹名称和玩家id查询该玩家炮弹库内的炮弹 -->
+   <select id="getShellPackFromCH" resultMap="shellpack">
+   		select * from shell_pack where shell_name=#{shell_name.name_ch} and p_id=#{p_id}
+   </select>
+   
+   <!-- 根据装备库内的武器id查询对应的武器 -->
+   <select id="getWeaponPackFromID" resultMap="weaponpack">
+   		select * from weapon_pack where id=#{id}
+   </select>
+   
+   <!-- 根据战车id和玩家id获取战车 -->
+   <select id="getTankPackFromID" resultMap="tankpack">
+   		select * from tank_pack where id=#{id} and p_id=#{p_id}
+   </select>
+  	
+  	<!-- 获取玩家车库内的所有战车 -->
+   <select id="getTankPackFromP_ID" resultMap="tankpack">
+   		select * from tank_pack where p_id=#{p_id}
+   </select>
+   
+   <!-- 根据玩家id查询未装备的主炮 -->
+   <select id="getWeaponFromP" resultMap="weaponpack">
+   		select * from weapon_pack where p_id=#{p_id} and equipped_with=0
+   </select>
+   
+   <!-- 根据玩家id查询未装备的引擎 -->
+   <select id="getEngineFromP" resultMap="enginepack">
+   		select * from engine_pack where p_id=#{p_id} and equipped_with=0
+   </select>
+   
+   <!-- 根据玩家id查询未装备的C核心 -->
+   <select id="getCoreFromP" resultMap="corepack">
+   		select * from core_pack where p_id=#{p_id} and equipped_with=0
+   </select>
+   
+   <!-- 根据玩家id查询未装备的装甲 -->
+   <select id="getArmorFromP" resultMap="armorpack">
+   		select * from armor_pack where p_id=#{p_id} and equipped_with=0
+   </select>
+   
+   <!-- SQL语句:插入-->
+   <!-- 获得装甲时将其放入装备库 -->
+   <insert id="armorInPack" useGeneratedKeys="true" keyProperty="id">
+   		insert into armor_pack values (null,#{armor_name.name},
+   		#{a_max_hp},#{a_hp},#{a_he_def},#{a_ap_def},#{weight},0,
+   		#{p_id},#{equipped_with})
+   </insert>
+   
+   <!-- 获得C核心时将C核心放入装备库 -->
+   <insert id="coreInPack" useGeneratedKeys="true" keyProperty="id">
+   		insert into core_pack values (null,#{core_name.name},
+   		#{c_reload_time},#{c_hit},#{c_miss},#{c_crt},#{c_x_crt},#{c_load},#{weight},
+   		#{p_id},#{equipped_with})
+   </insert>
+   
+   <!-- 获得引擎时将引擎放入装备库 -->
+   <insert id="engineInPack" useGeneratedKeys="true" keyProperty="id">
+   		insert into engine_pack values (null,#{engine_name.name},#{e_load},#{weight},#{p_id},#{equipped_with})
+   </insert>
+   
+   <!-- 获得武器时将武器放入装备库 -->
+   <insert id="weaponInPack" useGeneratedKeys="true" keyProperty="id">
+   		insert into weapon_pack values (null,#{weapon_name.name},
+   		#{w_atk},#{w_hit},#{w_crt},#{w_x_crt},#{w_reload_time},
+   		#{shell_name.name_ch},#{shell_num},#{weight},#{p_id},#{equipped_with})
+   </insert>
+   
+   <!-- 获得材料时将材料放入材料库 -->
+   <insert id="materialInPack">
+   		insert into material_pack values (null,#{material_name.name},#{p_id},#{num})
+   </insert>
+   
+   <!-- 获得炮弹时将炮弹放入炮弹库 -->
+   <insert id="shellInPack" useGeneratedKeys="true" keyProperty="id">
+   		insert into shell_pack values (null,#{shell_name.name_ch},#{p_id},#{num})
+   </insert>
+   
+   <!-- 获得战车时将战车放入车库 -->
+   <insert id="tankInPack" useGeneratedKeys="true" keyProperty="id">
+   		insert into tank_pack 
+   		values 
+   		(null,#{tank_rarity.id},#{name},
+   		#{chassis_skill.skill_name_ch},#{chassis_weight},#{tank_load},#{tank_max_load},
+   		#{armor.id},#{core_1.id},#{core_2.id},#{engine_1.id},#{engine_2.id},#{hole_1.id},#{hole_2.id},#{hole_3.id},#{hole_4.id},#{hole_5.id},#{hole_6.id},
+   		#{buy},#{sell},#{img},#{message},#{p_id}
+   		)
+   </insert>
+   
+   <!-- SQL语句：更新 -->
+   <!-- 更新战车装备的装备情况，将其变为未装备状态，将equipped_with变为0 -->
+   <update id="updateEquipped_with">
+   	<!-- 将装备的使用情况变为未装备 -->
+   		update 
+   		<if test="type=='armor'">
+   			armor_pack 
+   		</if>
+   		<if test="type=='core_1' or type=='core_2'">
+   			core_pack 
+   		</if>
+   		<if test="type=='engine_1' or type=='engine_2'">
+   			engine_pack 
+   		</if>
+   		<if test="type=='hole_1' or type=='hole_2' or type=='hole_3' or type=='hole_4' or type=='hole_5' or type=='hole_6'">
+   			weapon_pack 
+   		</if>
+   		set equipped_with=#{equip_status} where id=#{equip_id}
+   </update>
+   
+   <!-- 将该战车某个位置上的装备变未装备状态，武器有3种穴比较特殊，其他均为2-->
+   <update id="updateEquip">
+   		update tank_pack set 
+   		<if test="type=='armor'">
+   			armor
+   		</if>
+   		<if test="type=='core_1'">
+   			core_1
+   		</if>
+   		<if test="type=='core_2'">
+   			core_2
+   		</if>
+   		<if test="type=='engine_1'">
+   			engine_1
+   		</if>
+   		<if test="type=='engine_2'">
+   			engine_2
+   		</if>
+   		<if test="type=='hole_1'">
+   			hole_1
+   		</if>
+   		<if test="type=='hole_2'">
+   			hole_2
+   		</if>
+   		<if test="type=='hole_3'">
+   			hole_3
+   		</if>
+   		<if test="type=='hole_4'">
+   			hole_4
+   		</if>
+   		<if test="type=='hole_5'">
+   			hole_5
+   		</if>
+   		<if test="type=='hole_6'">
+   			hole_6
+   		</if>
+   		=#{equip} where id=#{tank_id}
+   	</update>
+</mapper>

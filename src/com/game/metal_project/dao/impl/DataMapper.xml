@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.game.metal_project.dao.DataDao">
+	
+   <!-- 装甲 -->
+   	<resultMap type="armor_data" id="armordata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="rarity" javaType="rarity" column="rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	</resultMap>
+   	
+   <!-- C核心 -->
+    <resultMap type="core_data" id="coredata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="rarity" javaType="rarity" column="rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 引擎 -->
+    <resultMap type="engine_data" id="enginedata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="rarity" javaType="rarity" column="rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 炮弹 -->
+    <resultMap type="shell_data" id="shelldata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="rarity" javaType="rarity" column="rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	</resultMap>
+   	
+   <!-- 武器 -->
+   	<resultMap type="weapon_data" id="weapondata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="rarity" javaType="rarity" column="rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	<association property="shell_name" javaType="shell_data" column="shell_name" select="com.game.metal_project.dao.DataDao.getShellDataFromCH">
+   	</association>
+   	</resultMap>
+   
+   <!-- 材料 -->
+    <resultMap type="material_data" id="materialdata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="rarity" javaType="rarity" column="rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	</resultMap>
+   
+   <!-- 坦克 -->
+   	<resultMap type="tank_data" id="tankdata">
+   	<!-- property指在ShopList中对应的属性名， javaType该属性名对应的类型，column指Shop中的属性名与另一个关联的表关联的属性名-->
+   	<!--  association可以用于外键的表关联查询，会通过select所指明的ProductType映射文件中的get方法，取找到关联的表的记录并将其封装到ProductType类型对应的属性中-->
+   	<association property="tank_rarity" javaType="rarity" column="tank_rarity" select="com.game.metal_project.dao.DataDao.getRarityFromID">
+   	</association>
+   	<association property="chassis_skill" javaType="chassis_skill_data" column="chassis_skill" select="com.game.metal_project.dao.DataDao.getChassisSkill">
+   	</association>
+   	<association property="armor" javaType="armor_data" column="armor" select="com.game.metal_project.dao.DataDao.getArmorDataFromCH">
+   	</association>
+   	<association property="core_1" javaType="core_data" column="core_1" select="com.game.metal_project.dao.DataDao.getCoreDataFromCH">
+   	</association>
+    <association property="core_2" javaType="core_data" column="core_2" select="com.game.metal_project.dao.DataDao.getCoreDataFromCH">
+   	</association>
+   	<association property="engine_1" javaType="engine_data" column="engine_1" select="com.game.metal_project.dao.DataDao.getEngineDataFromCH">
+   	</association>
+    <association property="engine_2" javaType="engine_data" column="engine_2" select="com.game.metal_project.dao.DataDao.getEngineDataFromCH">
+   	</association>
+   	<association property="hole_1" javaType="weapon_data" column="hole_1" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	<association property="hole_2" javaType="weapon_data" column="hole_2" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	<association property="hole_3" javaType="weapon_data" column="hole_3" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	<association property="hole_4" javaType="weapon_data" column="hole_4" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	<association property="hole_5" javaType="weapon_data" column="hole_5" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	<association property="hole_6" javaType="weapon_data" column="hole_6" select="com.game.metal_project.dao.DataDao.getWeaponDataFromCH">
+   	</association>
+   	</resultMap>
+   	
+   	<!-- 根据的装甲名称取装甲信息 -->
+   	<select id="getArmorDataFromCH" resultMap="armordata"> 
+   		select * from armor_data where name=#{name}
+   	</select>
+   	
+   	<!-- 根据特性名称获取战车底盘特性 -->
+   	<select id="getChassisSkill" resultType="chassis_skill_data"> 
+   		select * from chassis_skill_data where skill_name_ch=#{skill_name_ch}
+   	</select>
+   	
+    <!-- 根据的C核心名称获取C核心信息 -->
+   	<select id="getCoreDataFromCH" resultMap="coredata"> 
+   		select * from core_data where name=#{name}
+   	</select>
+   	
+    <!-- 根据的引擎名称获取引擎信息 -->
+   	<select id="getEngineDataFromCH" resultMap="enginedata"> 
+   		select * from engine_data where name=#{name}
+   	</select>
+   	
+    <!-- 根据的稀有度id获取稀有度 -->
+   	<select id="getRarityFromID" resultType="rarity"> 
+   		select * from rarity where id=#{id}
+   	</select>
+   	
+    <!-- 根据的炮弹名称获取炮弹信息 -->
+   	<select id="getShellDataFromCH" resultMap="shelldata"> 
+   		select * from shell_data where name_ch=#{name_ch}
+   	</select>
+   	
+   	<!-- 根据的武器名称获取武器信息 -->
+   	<select id="getWeaponDataFromCH" resultMap="weapondata"> 
+   		select * from weapon_data where name=#{name}
+   	</select>
+   	
+   	<!-- 根据id获取到坦克的信息 -->
+   	<select id="getTankDataFromid" resultMap="tankdata">
+   		select * from tank_data where id=#{id}
+   	</select>
+   	
+   	<!-- 根据材料名称获取材料信息 -->
+   	<select id="getMaterialDataFromCH" resultMap="materialdata">
+   		select * from material_data where name=#{name}
+   	</select>
+</mapper>

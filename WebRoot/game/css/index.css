@@ -1,0 +1,26 @@
+/* CSS Document */
+body,table,tr,th,td,ul,ol,li,p {
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+body {
+	text-align: center;
+}
+div{
+	display:block;	
+}
+.btn{ width:95px;
+height:40px;
+margin-top:3px;
+margin-left:10px;
+text-align:center;
+border-radius:6px;
+color:#FFF;
+float:left;	
+text-decoration:none;
+}
+.tab{
+	
+	}
+
