@@ -22,6 +22,10 @@
           href="<%=basePath %>game/bootstrap/css/bootstrap.min.css">
 
     <style>
+        body {
+            background: url("<%=basePath%>game/images/bg_0406.jpg") no-repeat;
+            background-size: cover;
+        }
         .headerS{
             position: relative;
             width: 100%;
@@ -29,15 +33,21 @@
 
         }
         .headerS div{
-            border:1px solid red;
+            opacity: 0.7;
             display: block;
             background: #0f0f0f;
-            width: 23%;
-            height: 35%;
+            width: 190px;
+            height: 200px;
             margin:1%;
             float: left;
             color:#ffffff;
         }
+        .headerS div img{
+            width:190px;
+            height: 200px;
+
+        }
+
         .xiaLai{
             position: relative;
             width:100%;
@@ -49,20 +59,39 @@
             float: left;
             margin:10px;
             }
-
+        .active{
+            top: 5px;
+            border:1px solid blue;
+        }
     </style>
+    <script>
+        $(function () {
+            $(".headerS div").click(function () {
+                $(".headerS div").removeClass("active");
+                $(this).addClass("active");
+              var  c=$(this).children().attr("src");
+                alert(c);
+            })
+            
+            
+        })
+    </script>
 </head>
+
 <body>
 <div class="container"><!--大框-->
 <div class="headerS"><!--所有头像的框-->
-    <div>头像</div><!--头像1-->
-    <div>头像</div><!--头像2-->
-    <div>头像</div><!--头像3-->
-    <div>头像</div><!--头像4-->
-    <div>头像</div><!--头像5-->
-    <div>头像</div><!--头像6-->
-    <div>头像</div><!--头像7-->
-    <div>头像</div><!--头像8-->
+    <div><img src="game/images/character/W.png"></div><!--头像1-->
+    <div><img src="game/images/character/X.png"></div><!--头像2-->
+    <div><img src="game/images/character/ZO.png"></div><!--头像3-->
+    <div><img src="game/images/character/ZX.png"></div><!--头像4-->
+    <div><img src="game/images/character/RX.png"></div><!--头像5-->
+    <div><img src="game/images/character/J.png"></div><!--头像6-->
+    <div><img src="game/images/character/FAIZ.png"></div><!--头像7-->
+    <div><img src="game/images/character/DECADE.png"></div><!--头像8-->
+    <div><img src="game/images/character/DRIVE.png"></div><!--头像9-->
+    <div><img src="game/images/character/BLADE.png"></div><!--头像10-->
+    <div><img src="game/images/character/BLACK.png"></div><!--头像11-->
 </div>
     <div  class="xiaLai">
         <div >
