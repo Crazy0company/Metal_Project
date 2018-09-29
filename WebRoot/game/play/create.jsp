@@ -58,10 +58,14 @@
             width:20%;
             float: left;
             margin:10px;
-            }
+        }
         .active{
             top: 5px;
             border:1px solid blue;
+        }
+        .KUANG{
+            border:2px solid gray;
+            opacity: 0.8;
         }
     </style>
     <script>
@@ -69,47 +73,48 @@
             $(".headerS div").click(function () {
                 $(".headerS div").removeClass("active");
                 $(this).addClass("active");
-              var  c=$(this).children().attr("src");
-                alert(c);
+                var  c=$(this).children().attr("name");
+
             })
-            
-            
+
+
         })
     </script>
 </head>
 
 <body>
-<div class="container"><!--大框-->
-<div class="headerS"><!--所有头像的框-->
-    <div><img src="game/images/character/W.png"></div><!--头像1-->
-    <div><img src="game/images/character/X.png"></div><!--头像2-->
-    <div><img src="game/images/character/ZO.png"></div><!--头像3-->
-    <div><img src="game/images/character/ZX.png"></div><!--头像4-->
-    <div><img src="game/images/character/RX.png"></div><!--头像5-->
-    <div><img src="game/images/character/J.png"></div><!--头像6-->
-    <div><img src="game/images/character/FAIZ.png"></div><!--头像7-->
-    <div><img src="game/images/character/DECADE.png"></div><!--头像8-->
-    <div><img src="game/images/character/DRIVE.png"></div><!--头像9-->
-    <div><img src="game/images/character/BLADE.png"></div><!--头像10-->
-    <div><img src="game/images/character/BLACK.png"></div><!--头像11-->
-</div>
+<div class="container KUANG"><!--大框-->
+    <div class="headerS"><!--所有头像的框-->
+        <div><img name="game/images/character/W.png" src="<%=basePath %>game/images/character/W.png"></div><!--头像1-->
+        <div><img name="game/images/character/X.png" src="<%=basePath %>game/images/character/X.png"></div><!--头像2-->
+        <div><img name="game/images/character/ZO.png" src="<%=basePath %>game/images/character/ZO.png"></div><!--头像3-->
+        <div><img name="game/images/character/ZX.png" src="<%=basePath %>game/images/character/ZX.png"></div><!--头像4-->
+        <div><img name="game/images/character/RX.png" src="<%=basePath %>game/images/character/RX.png"></div><!--头像5-->
+        <div><img name="game/images/character/J.png" src="<%=basePath %>game/images/character/J.png"></div><!--头像6-->
+        <div><img name="game/images/character/FAIZ.png" src="<%=basePath %>game/images/character/FAIZ.png"></div><!--头像7-->
+        <div><img name="game/images/character/DECADE.png" src="<%=basePath %>game/images/character/DECADE.png"></div><!--头像8-->
+        <div><img name="game/images/character/DRIVE.png" src="<%=basePath %>game/images/character/DRIVE.png"></div><!--头像9-->
+        <div><img name="game/images/character/BLADE.png" src="<%=basePath %>game/images/character/BLADE.png"></div><!--头像10-->
+        <div><img name="game/images/character/BLACK.png" src="<%=basePath %>game/images/character/BLACK.png"></div><!--头像11-->
+    </div>
     <div  class="xiaLai">
         <div >
             <input id="p_username" name="p_username" type="text"
-                class="form-control input_con" placeholder="昵称">
+                   class="form-control input_con" placeholder="昵称">
         </div>
         <div>
             <input id="p_password" name="p_password" type="password"
-                class="form-control input_con" placeholder="密码,6-18位" required>
-            </div>
+                   class="form-control input_con" placeholder="密码,6-18位" required>
+        </div>
         <div>
             <input id="repassword" name="repassword" type="password"
-                class="form-control input_con" required placeholder="确认密码">
+                   class="form-control input_con" required placeholder="确认密码">
         </div>
         <div>
             <button  id="submit" name="submit" class="form-control">完成</button>
         </div>
     </div>
 </div>
+
 </body>
 </html>
