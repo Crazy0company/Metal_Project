@@ -36,8 +36,6 @@
             opacity: 0.7;
             display: block;
             background: #0f0f0f;
-            width: 190px;
-            height: 200px;
             margin:1%;
             float: left;
             color:#ffffff;
